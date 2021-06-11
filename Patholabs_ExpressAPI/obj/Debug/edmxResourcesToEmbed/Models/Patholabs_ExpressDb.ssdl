@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Patholabs_ExpressModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Patholabs_Express.dbo.User_Admin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="User_Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Address" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Contact_No" Type="varchar" MaxLength="10" />
+    <Property Name="IsAdmin" Type="bit" />
+    <Property Name="Password" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityContainer Name="Patholabs_ExpressModelStoreContainer">
+    <EntitySet Name="User_Admin" EntityType="Self.User_Admin" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [User_Admin].[Id] AS [Id], 
+    [User_Admin].[Name] AS [Name], 
+    [User_Admin].[Address] AS [Address], 
+    [User_Admin].[Age] AS [Age], 
+    [User_Admin].[Gender] AS [Gender], 
+    [User_Admin].[Email] AS [Email], 
+    [User_Admin].[Contact_No] AS [Contact_No], 
+    [User_Admin].[IsAdmin] AS [IsAdmin], 
+    [User_Admin].[Password] AS [Password]
+    FROM [dbo].[User_Admin] AS [User_Admin]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
